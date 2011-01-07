@@ -2,3 +2,6 @@ I find no love in this passionless life.
 
 For Reddit Game Jam #5.
 
+The entry point should be set to PassionlessLife.as (right click and choose Always Compile in FlashDevelop)
+
+Requires Flixel 2.3x to compile and run properly.
