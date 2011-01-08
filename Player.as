@@ -10,7 +10,8 @@ package
 	{
 		public var
 		_jumpPower:Number = 50,
-		_runSpeed:int = 23;
+		_runSpeed:int = 23,
+		_jumping:Boolean = false;
 		
 		private var
 		_jumpDuration:Number = 0;
@@ -24,6 +25,8 @@ package
 			
 			width = 6;
 			offset.x = 5;
+			offset.y = 5
+			height = height-5
 			
 			addAnimation("idle", [0]);
 			addAnimation("jumpup", [5]);
@@ -56,15 +59,25 @@ package
 			if (onFloor && !velocity.x) play("idle");
 			else if (onFloor) play("run");
 			
-			if (FlxG.keys.justPressed("UP") && onFloor) velocity.y = -_jumpPower;
-			
 			if (!onFloor)
 			{
 				_jumpDuration += FlxG.elapsed;
 			}
-			else _jumpDuration = 0;
+			else 
+			{
+				_jumpDuration = 0;
+				_jumping = false;
+			}
 			
-			if (FlxG.keys.UP && !onFloor && _jumpDuration < 0.5)
+			if (FlxG.keys.justPressed("UP") && onFloor) 
+			{
+				velocity.y = -_jumpPower;
+				_jumping = true;
+			}
+			
+			if (!FlxG.keys.UP && !onFloor) _jumpDuration = 50;
+			
+			if (FlxG.keys.UP && !onFloor && _jumpDuration < 0.5 && _jumping)
 			{
 				velocity.y = -_jumpPower
 			}

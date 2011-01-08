@@ -5,3 +5,5 @@ For Reddit Game Jam #5.
 The entry point should be set to PassionlessLife.as (right click and choose Always Compile in FlashDevelop)
 
 Requires Flixel 2.4x to compile and run properly.
+
+To edit the level sources, use tIDE (http://tide.codeplex.com/).
