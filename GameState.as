@@ -1,5 +1,6 @@
 package 
 {
+	import levels.Level1;
 	import org.flixel.*;
 	import levels.BaseLevel;
 	/**
@@ -12,7 +13,7 @@ package
 		{
 			super.create();
 			
-			FlxG.state = new BaseLevel();
+			FlxG.state = new Level1();
 		}
 	}
 	

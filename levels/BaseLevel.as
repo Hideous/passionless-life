@@ -20,7 +20,7 @@ package levels
 		_backgroundColor:uint = 0xFF44bee3,
 		_spawnPosition:FlxPoint,
 		_levelTilemap:FlxTilemap,
-		_csvToLoad:Class, //This is going to be a reference to the CSV file to load for the tilemap.
+		_csvToLoad:String, //This is going to be a reference to the CSV file to load for the tilemap.
 		_player:Player,
 		_nextLevel:String,
 		_goalText:String,
@@ -46,7 +46,7 @@ package levels
 			add(_levelTilemap);
 			_levelTilemap.x = -5*8
 			_levelTilemap.collideIndex = 5;
-			_levelTilemap.loadMap((new _csvToLoad) as String, Assets.ImgTiles, 8, 8);
+			_levelTilemap.loadMap(_csvToLoad, Assets.ImgTiles, 8, 8);
 			_levelTilemap.refresh = true;
 			
 			/*_tileBlock = new FlxTileblock( -25, 200, 500, 500);
