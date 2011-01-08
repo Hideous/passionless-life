@@ -13,7 +13,9 @@ package
 		[Embed(source = 'assets/player.png')] public static var ImgPlayer:Class;
 		[Embed(source = 'assets/menu.png')] public static var ImgMenu:Class;
 		
-		[Embed(source = 'assets/testlevel.txt',mimeType="application/octet-stream")] public static var LvlTest:Class;
+		[Embed(source = 'assets/testlevel.txt', mimeType = "application/octet-stream")] public static var LvlTest:Class;
+		
+		[Embed(source = 'assets/Level 1.txt', mimeType = "application/octet-stream"))] public static var LvlOne:Class;
 	}
 	
 }
