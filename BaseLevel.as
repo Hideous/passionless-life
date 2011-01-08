@@ -69,7 +69,7 @@ package
 			
 			_levelTilemap.collide(_player);
 			
-			if (_player.x > FlxG.width && _nextLevel.length > 0)
+			if (_player.x > FlxG.width && _nextLevel != "")
 			{
 				var classReference:Class = getDefinitionByName(_nextLevel) as Class;
 				FlxG.state = (new classReference() as FlxState); //Load the next level by determining the class name from the string

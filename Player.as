@@ -9,7 +9,7 @@ package
 	public class Player extends FlxSprite 
 	{
 		public var
-		_jumpPower:Number = 60,
+		_jumpPower:Number = 80,
 		_runSpeed:int = 23;
 		
 		public function Player(spawnx:int, spawny:int):void
@@ -26,7 +26,7 @@ package
 			addAnimation("jumpup", [5]);
 			addAnimation("jumpmid", [6]);
 			addAnimation("falling", [7]);
-			addAnimation("run", [1, 2, 3, 4],  12, true);
+			addAnimation("run", [1, 2, 3, 4], 6, true);
 			
 			maxVelocity.y = _jumpPower * 16; //Just guessing here
 			acceleration.y = 12 * 8; //Gravity!
