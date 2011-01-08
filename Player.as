@@ -9,7 +9,7 @@ package
 	public class Player extends FlxSprite 
 	{
 		public var
-		_jumpPower:Number = 42,
+		_jumpPower:Number = 60,
 		_runSpeed:int = 23;
 		
 		public function Player(spawnx:int, spawny:int):void

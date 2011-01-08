@@ -1,6 +1,7 @@
 package 
 {
 	import org.flixel.*;
+	import flash.utils.getDefinitionByName;
 	
 	/**
 	 * ...
@@ -22,7 +23,8 @@ package
 		_levelTilemap:FlxTilemap,
 		_csvToLoad:String, //This is going to be a reference to the CSV file to load for the tilemap.
 		_tileGraphics:Class, //The graphics for the tiles.
-		_player:Player;
+		_player:Player,
+		_nextLevel:String;
 		 
 		//TEMPORARY FOR DEBUG
 		private var
@@ -58,6 +60,12 @@ package
 			//TODO: Make level collide with (currently non-existant) player
 			
 			_tileBlock.collide(_player);
+			
+			if (_player.x > FlxG.width && _nextLevel.length > 0)
+			{
+				var classReference:Class = getDefinitionByName(_nextLevel) as Class;
+				FlxG.state = (new classReference() as FlxState); //Load the next level by determining the class name from the string
+			}
 		}
 	}
 	
