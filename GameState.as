@@ -1,6 +1,7 @@
 package 
 {
 	import org.flixel.*;
+	import levels.BaseLevel;
 	/**
 	 * ...
 	 * @author Andreas Jörgensen

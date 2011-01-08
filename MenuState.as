@@ -10,7 +10,7 @@ package
 	{
 		
 		public var
-		_backgroundColor:uint = 0x00c3ff;
+		_backgroundColor:uint = 0xFF00c3ff;
 		 
 		 
 		override public function create():void 
