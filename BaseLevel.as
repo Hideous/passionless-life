@@ -21,26 +21,43 @@ package
 		_spawnPosition:FlxPoint,
 		_levelTilemap:FlxTilemap,
 		_csvToLoad:String, //This is going to be a reference to the CSV file to load for the tilemap.
-		_tileGraphics:Class; //The graphics for the tiles.
+		_tileGraphics:Class, //The graphics for the tiles.
+		_player:Player;
 		 
+		//TEMPORARY FOR DEBUG
+		private var
+		_tileBlock:FlxTileblock;
 		 
 		override public function create():void 
 		{
 			super.create();
 			
+			FlxU.setWorldBounds( -500, -500, 800, 800);
+			
 			var bgSprite:FlxSprite = new FlxSprite();
 			bgSprite.createGraphic(FlxG.width, FlxG.height, _backgroundColor);
 			add(bgSprite); //This adds the background sprite. As long as _backgroundColor and similar are set in the constructor we should be fine
 			
-			_levelTilemap = new FlxTilemap();
+			//Uncomment later, when we actually have tilemaps to use
+			/*_levelTilemap = new FlxTilemap();
 			_levelTilemap.loadMap(_csvToLoad, _tileGraphics, 8, 8);
-			add(_levelTilemap);
+			add(_levelTilemap);*/
+			
+			_tileBlock = new FlxTileblock( -25, 250, 250, 250);
+			_tileBlock.createGraphic(8, 8, 0xff000000);
+			
+			_player = new Player(30, 30);
+			
+			add(_tileBlock);
+			add(_player);
 		}
 		
 		override public function update():void 
 		{
 			super.update();
 			//TODO: Make level collide with (currently non-existant) player
+			
+			_tileBlock.collide(_player);
 		}
 	}
 	

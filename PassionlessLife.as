@@ -11,7 +11,10 @@ package
 	 
 	public class PassionlessLife extends FlxGame 
 	{
-		super(200, 320, GameState); //Todo: add a game state.
+		public function PassionlessLife()
+		{
+			super(200, 320, GameState); //Todo: add a game state.
+		}
 	}
 	
 }
