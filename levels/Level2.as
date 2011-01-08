@@ -15,7 +15,7 @@ package levels
 			_spawnPosition = new FlxPoint(8, 22.5 * 8);
 			_goalText = "We definitely had our ups. The thrill of someone new, the joy of just being. PLACEHOLDER TEXT LOL";
 			_csvToLoad = new Assets.LvlTwo;
-			_nextLevel = Level2;
+			_nextLevel = Level3;
 		}
 	}
 	

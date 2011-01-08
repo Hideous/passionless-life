@@ -17,6 +17,7 @@ package
 		{
 			super.create();
 			
+			FlxG.playMusic(Assets.SndWind);
 			
 			var bgSprite:FlxSprite = new FlxSprite();
 			bgSprite.createGraphic(FlxG.width, FlxG.height, _backgroundColor);

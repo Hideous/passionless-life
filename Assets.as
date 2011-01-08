@@ -17,6 +17,9 @@ package
 		
 		[Embed(source = 'assets/Level 1.txt', mimeType = "application/octet-stream")] public static var LvlOne:Class;
 		[Embed(source = 'assets/Level 2.txt', mimeType = "application/octet-stream")] public static var LvlTwo:Class;
+		[Embed(source = 'assets/Level 3.txt', mimeType = "application/octet-stream")] public static var LvlThree:Class;
+		
+		[Embed(source = 'assets/Wind.mp3', mimeType = 'application/octet-stream')] public static var SndWind:Class;
 	}
 	
 }
