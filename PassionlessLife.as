@@ -1,5 +1,7 @@
 package 
 {
+	import flash.display.StageQuality;
+	import flash.ui.ContextMenu;
 	import org.flixel.FlxGame;
 	
 	/**
@@ -14,6 +16,13 @@ package
 		public function PassionlessLife()
 		{
 			super(200, 320, GameState); //Todo: add a game state.
+			
+			stage.quality = StageQuality.LOW;
+			
+			var menu:ContextMenu = new ContextMenu();
+			menu.hideBuiltInItems();
+			contextMenu = menu;
+			
 		}
 	}
 	

@@ -1,5 +1,6 @@
 package 
 {
+	import flash.utils.ByteArray;
 	
 	/**
 	 * ...
@@ -7,7 +8,10 @@ package
 	 */
 	public class Assets 
 	{
-		[Embed(source='assets/tiles.png')] public static var ImgTiles:Class;
+		[Embed(source = 'assets/tiles.png')] public static var ImgTiles:Class;
+		[Embed(source = 'assets/text_balloon.png')] public static var ImgTextBalloon:Class;
+		
+		[Embed(source = 'assets/testlevel.txt',mimeType="application/octet-stream")] public static var LvlTest:Class;
 	}
 	
 }

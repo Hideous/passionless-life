@@ -22,9 +22,9 @@ package
 		_spawnPosition:FlxPoint,
 		_levelTilemap:FlxTilemap,
 		_csvToLoad:String, //This is going to be a reference to the CSV file to load for the tilemap.
-		_tileGraphics:Class, //The graphics for the tiles.
 		_player:Player,
-		_nextLevel:String;
+		_nextLevel:String,
+		_crypticText:TextSign;
 		 
 		//TEMPORARY FOR DEBUG
 		private var
@@ -40,26 +40,34 @@ package
 			bgSprite.createGraphic(FlxG.width, FlxG.height, _backgroundColor);
 			add(bgSprite); //This adds the background sprite. As long as _backgroundColor and similar are set in the constructor we should be fine
 			
-			//Uncomment later, when we actually have tilemaps to use
-			/*_levelTilemap = new FlxTilemap();
-			_levelTilemap.loadMap(_csvToLoad, _tileGraphics, 8, 8);
-			add(_levelTilemap);*/
+			_csvToLoad = new Assets.LvlTest; //Temporary for testing
 			
-			_tileBlock = new FlxTileblock( -25, 200, 500, 500);
-			_tileBlock.loadTiles(Assets.ImgTiles, 8, 8, 0);
+			_levelTilemap = new FlxTilemap();
+			add(_levelTilemap);
+			_levelTilemap.x = -5*8
+			_levelTilemap.collideIndex = 5;
+			_levelTilemap.loadMap(_csvToLoad, Assets.ImgTiles, 8, 8);
+			_levelTilemap.refresh = true;
+			
+			/*_tileBlock = new FlxTileblock( -25, 200, 500, 500);
+			_tileBlock.loadTiles(Assets.ImgTiles, 8, 8, 0);*/
 			
 			_player = new Player(30, 30);
 			
 			add(_tileBlock);
 			add(_player);
+			
+			_crypticText = new TextSign();
+			add(_crypticText);
+			_crypticText._goalString = "I ate my ice cream. After 7 hours\nnobody wanted my hamburgers.\n\nI enjoy toasters.";
+			_crypticText.start();
 		}
 		
 		override public function update():void 
 		{
 			super.update();
-			//TODO: Make level collide with (currently non-existant) player
 			
-			_tileBlock.collide(_player);
+			_levelTilemap.collide(_player);
 			
 			if (_player.x > FlxG.width && _nextLevel.length > 0)
 			{
