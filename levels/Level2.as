@@ -12,7 +12,7 @@ package levels
 	{
 		public function Level2():void
 		{
-			_spawnPosition = new FlxPoint(8, 22.5 * 8);
+			_spawnPosition = new FlxPoint(8, 23 * 8);
 			_goalText = "We definitely had our ups. The thrill of someone new, the joy of just being. PLACEHOLDER TEXT LOL";
 			_csvToLoad = new Assets.LvlTwo;
 			_nextLevel = Level3;
