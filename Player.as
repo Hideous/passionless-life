@@ -16,7 +16,17 @@ package
 		{
 			super(spawnx, spawny);
 			
-			createGraphic(8, 8, 0xFF000000); //temporary until we can get a proper sprite in
+			//createGraphic(8, 8, 0xFF000000); //temporary until we can get a proper sprite in
+			loadGraphic(Assets.ImgPlayer, true, true, 16, 20);
+			
+			width = 6;
+			offset.x = 5;
+			
+			addAnimation("idle", [0]);
+			addAnimation("jumpup", [5]);
+			addAnimation("jumpmid", [6]);
+			addAnimation("falling", [7]);
+			addAnimation("run", [1, 2, 3, 4],  12, true);
 			
 			maxVelocity.y = _jumpPower * 16; //Just guessing here
 			acceleration.y = 12 * 8; //Gravity!
@@ -25,8 +35,23 @@ package
 		
 		override public function update():void 
 		{
-			if (FlxG.keys.LEFT) velocity.x = -_runSpeed;
-			else if (FlxG.keys.RIGHT) velocity.x = _runSpeed;
+			if (FlxG.keys.LEFT) 
+			{
+				velocity.x = -_runSpeed;
+				facing = FlxSprite.LEFT;
+			}
+			else if (FlxG.keys.RIGHT) 
+			{
+				facing = FlxSprite.RIGHT;
+				velocity.x = _runSpeed;
+			}
+			
+			if (velocity.y < -10 && !onFloor) play("jumpup");
+			else if (velocity.y > 10 && !onFloor) play("falling");
+			else if (!onFloor) play("jumpmid");
+			
+			if (onFloor && !velocity.x) play("idle");
+			else if (onFloor) play("run");
 			
 			if (FlxG.keys.justPressed("UP") && onFloor) velocity.y = -_jumpPower;
 			
