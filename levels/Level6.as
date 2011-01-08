@@ -17,6 +17,13 @@ package levels
 			_csvToLoad = new Assets.LvlSix;
 			_nextLevel = Level7;
 		}
+		
+		override public function createObjects():void 
+		{
+			super.createObjects();
+			
+			_enemies.add(new Enemy(9 * 8, 31 * 8));
+		}
 	}
 	
 }

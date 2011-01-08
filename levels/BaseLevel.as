@@ -2,6 +2,7 @@ package levels
 {
 	import org.flixel.*;
 	import flash.utils.getDefinitionByName;
+	import flash.utils.getQualifiedClassName;
 	
 	/**
 	 * ...
@@ -65,6 +66,9 @@ package levels
 			_crypticText._goalString = _goalText;
 			_crypticText.start();
 			
+			_enemies = new FlxGroup();
+			add(_enemies);
+			
 			createObjects();
 			
 			_fadeSprite = new FlxSprite();
@@ -86,6 +90,26 @@ package levels
 			_fadeSprite.alpha -= FlxG.elapsed;
 			
 			_levelTilemap.collide(_player);
+			_levelTilemap.collide(_enemies);
+			
+			for each (var e:Enemy in _enemies.members)
+			{
+				if (e.overlaps(_player) && !e.dead)
+				{
+					if (_player.velocity.y > 0)
+					{
+						e.kill()
+						_player.velocity.y = -30;
+					}
+					else
+					{
+						//_player._canMove = false;
+						_player.kill();
+						//FlxG.fade.start(0xFF000000, 0.5, resetLevel);
+						FlxG.flash.start(0xFFFFFFFF, 0.3, resetLevel);
+					}
+				}
+			}
 			
 			if (_player.x > FlxG.width)
 			{
@@ -98,6 +122,11 @@ package levels
 		private function switchLevels():void
 		{
 			FlxG.state = new _nextLevel; //Load the next level
+		}
+		private function resetLevel():void
+		{
+			var classToMake:Class = getDefinitionByName(getQualifiedClassName(this)) as Class;
+			FlxG.state = new classToMake;//State is a new instance of this class
 		}
 	}
 	
