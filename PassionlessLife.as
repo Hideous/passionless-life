@@ -15,7 +15,7 @@ package
 	{
 		public function PassionlessLife()
 		{
-			super(200, 320, GameState); //Todo: add a game state.
+			super(200, 320, MenuState); //Todo: add a game state.
 			
 			stage.quality = StageQuality.LOW;
 			
