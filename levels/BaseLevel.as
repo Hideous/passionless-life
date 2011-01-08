@@ -80,6 +80,8 @@ package levels
 		{
 			super.update();
 			
+			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level5();
+			
 			_fadeSprite.alpha -= FlxG.elapsed;
 			
 			_levelTilemap.collide(_player);
