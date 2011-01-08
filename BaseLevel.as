@@ -17,7 +17,7 @@ package
 		 * */
 		
 		public var
-		_backgroundColor:uint = 0xFFFF0000,
+		_backgroundColor:uint = 0xFF44bee3,
 		_spawnPosition:FlxPoint,
 		_levelTilemap:FlxTilemap,
 		_csvToLoad:String, //This is going to be a reference to the CSV file to load for the tilemap.
