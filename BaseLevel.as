@@ -43,8 +43,8 @@ package
 			_levelTilemap.loadMap(_csvToLoad, _tileGraphics, 8, 8);
 			add(_levelTilemap);*/
 			
-			_tileBlock = new FlxTileblock( -25, 250, 250, 250);
-			_tileBlock.createGraphic(8, 8, 0xff000000);
+			_tileBlock = new FlxTileblock( -25, 200, 500, 500);
+			_tileBlock.loadTiles(Assets.ImgTiles, 8, 8, 0);
 			
 			_player = new Player(30, 30);
 			
