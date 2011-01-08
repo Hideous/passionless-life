@@ -30,7 +30,7 @@ package
 			_timeSinceLast = 0;
 			_nextTime = 0.01;
 			
-			_textDisplay = new FlxText(5, 5, 195, "");
+			_textDisplay = new FlxText(5, 5, 185, "");
 			
 			
 			_textDisplay.setFormat("silkscreen", 9, 0x000000);

@@ -12,10 +12,10 @@ package levels
 	{
 		public function Level3():void
 		{
-			_spawnPosition = new FlxPoint(8, 16 * 8);
+			_spawnPosition = new FlxPoint(8, 17 * 8);
 			_goalText = "nooooooooooooooope";
 			_csvToLoad = new Assets.LvlThree;
-			_nextLevel = Level2;
+			_nextLevel = Level4;
 		}
 	}
 	
