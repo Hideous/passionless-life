@@ -9,8 +9,11 @@ package
 	public class Player extends FlxSprite 
 	{
 		public var
-		_jumpPower:Number = 80,
+		_jumpPower:Number = 50,
 		_runSpeed:int = 23;
+		
+		private var
+		_jumpDuration:Number = 0;
 		
 		public function Player(spawnx:int, spawny:int):void
 		{
@@ -55,8 +58,26 @@ package
 			
 			if (FlxG.keys.justPressed("UP") && onFloor) velocity.y = -_jumpPower;
 			
+			if (!onFloor)
+			{
+				_jumpDuration += FlxG.elapsed;
+			}
+			else _jumpDuration = 0;
+			
+			if (FlxG.keys.UP && !onFloor && _jumpDuration < 0.5)
+			{
+				velocity.y = -_jumpPower
+			}
+			
 			super.update();
 			
+		}
+		
+		override public function hitTop(Contact:FlxObject, Velocity:Number):void 
+		{
+			super.hitTop(Contact, Velocity);
+			
+			_jumpDuration = 50;
 		}
 	}
 	
