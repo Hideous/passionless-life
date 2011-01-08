@@ -31,7 +31,7 @@ package
 		{
 			super.update();
 			
-			if (FlxG.keys.justPressed("LEFT") && FlxG.keys.justPressed("RIGHT"))
+			if (FlxG.keys.pressed("LEFT") && FlxG.keys.pressed("RIGHT"))
 			{
 				FlxG.state = new GameState();
 			}
