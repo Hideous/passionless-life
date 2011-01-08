@@ -25,6 +25,8 @@ package
 			
 			var menuSprite:FlxSprite = new FlxSprite();
 			menuSprite.loadGraphic(Assets.ImgMenu, true, false, 200, 320);
+			menuSprite.addAnimation("wind", [0, 1, 2, 3], 6, true);
+			menuSprite.play("wind");
 			add(menuSprite);
 		}
 		
