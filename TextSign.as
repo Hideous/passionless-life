@@ -33,7 +33,7 @@ package
 			_textDisplay = new FlxText(5, 5, 195, "");
 			
 			
-			_textDisplay.setFormat("silkscreen", 8, 0x000000);
+			_textDisplay.setFormat("silkscreen", 9, 0x000000);
 			_textDisplay.antialiasing = false;
 			
 			loadGraphic(Assets.ImgTextBalloon);
