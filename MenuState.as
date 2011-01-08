@@ -10,8 +10,8 @@ package
 	{
 		
 		public var
-		_backgroundColor:uint = 0xFF00c3ff;
-		 
+		_backgroundColor:uint = 0xFF00c3ff,
+		_textLeftRight:FlxText;
 		 
 		override public function create():void 
 		{
@@ -28,6 +28,12 @@ package
 			menuSprite.addAnimation("wind", [0, 1, 2, 3], 6, true);
 			menuSprite.play("wind");
 			add(menuSprite);
+			
+			_textLeftRight = new FlxText(0, 40, 200, "LEFT + RIGHT");
+			_textLeftRight.setFormat("silkscreen", 9, 0x000000);
+			_textLeftRight.alignment = "center";
+			_textLeftRight.antialiasing = false;
+			add(_textLeftRight);
 		}
 		
 		override public function update():void 
@@ -38,6 +44,13 @@ package
 			{
 				FlxG.state = new GameState();
 			}
+			
+			// animate the left+right text
+			var date:Date = new Date();
+			var t:Number = date.getMilliseconds() / 1000.0 + date.getSeconds();
+			var speed:Number = 2; // speed at which the text floats up/down
+			var scale:Number = 3; // scale the up/down movement in pixels
+			_textLeftRight.y = 40 + int(scale * Math.sin(t * speed));
 		}
 	}
 	
