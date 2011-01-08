@@ -8,14 +8,14 @@ package levels
 	 * ...
 	 * @author Andreas Jörgensen
 	 */
-	public class Level5 extends BaseLevel 
+	public class Level6 extends BaseLevel 
 	{
-		public function Level5():void
+		public function Level6():void
 		{
-			_spawnPosition = new FlxPoint(8, 18 * 8);
+			_spawnPosition = new FlxPoint(8, 22 * 8);
 			_goalText = "I started seeing familiar faces and shapes everywhere. Faces of people - people who were better than me. At everything.";
-			_csvToLoad = new Assets.LvlFive;
-			_nextLevel = Level6;
+			_csvToLoad = new Assets.LvlSix;
+			_nextLevel = Level1;
 		}
 	}
 	

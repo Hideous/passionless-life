@@ -24,7 +24,8 @@ package levels
 		_player:Player,
 		_nextLevel:Class,
 		_goalText:String,
-		_crypticText:TextSign;
+		_crypticText:TextSign,
+		_enemies:FlxGroup;
 		 
 		//TEMPORARY FOR DEBUG
 		private var
@@ -80,7 +81,7 @@ package levels
 		{
 			super.update();
 			
-			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level5();
+			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level6();
 			
 			_fadeSprite.alpha -= FlxG.elapsed;
 			
