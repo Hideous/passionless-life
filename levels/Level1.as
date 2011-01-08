@@ -2,6 +2,8 @@ package levels
 {
 	import org.flixel.FlxPoint;
 	
+	import levels.BaseLevel;
+	
 	/**
 	 * ...
 	 * @author Andreas Jörgensen
