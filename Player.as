@@ -11,7 +11,8 @@ package
 		public var
 		_jumpPower:Number = 50,
 		_runSpeed:int = 23,
-		_jumping:Boolean = false;
+		_jumping:Boolean = false,
+		_canMove:Boolean = true;
 		
 		private var
 		_jumpDuration:Number = 0;
@@ -41,6 +42,7 @@ package
 		
 		override public function update():void 
 		{
+			if (!_canMove) return;
 			if (FlxG.keys.LEFT) 
 			{
 				velocity.x = -_runSpeed;

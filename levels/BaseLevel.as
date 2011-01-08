@@ -22,13 +22,15 @@ package levels
 		_levelTilemap:FlxTilemap,
 		_csvToLoad:String, //This is going to be a reference to the CSV file to load for the tilemap.
 		_player:Player,
-		_nextLevel:String,
+		_nextLevel:Class,
 		_goalText:String,
 		_crypticText:TextSign;
 		 
 		//TEMPORARY FOR DEBUG
 		private var
 		_tileBlock:FlxTileblock;
+		
+		private var _fadeSprite:FlxSprite;
 		 
 		override public function create():void 
 		{
@@ -61,19 +63,38 @@ package levels
 			add(_crypticText);
 			_crypticText._goalString = _goalText;
 			_crypticText.start();
+			
+			createObjects();
+			
+			_fadeSprite = new FlxSprite();
+			_fadeSprite.createGraphic(FlxG.width, FlxG.height, 0xFF000000);
+			add(_fadeSprite);
+		}
+		
+		public function createObjects():void
+		{
+			//For use in sub-classes when creating objects and stuff, to make them show up in the right order
 		}
 		
 		override public function update():void 
 		{
 			super.update();
 			
+			_fadeSprite.alpha -= FlxG.elapsed;
+			
 			_levelTilemap.collide(_player);
 			
-			if (_player.x > FlxG.width && _nextLevel != "" && _nextLevel)
+			if (_player.x > FlxG.width)
 			{
-				var classReference:Class = getDefinitionByName(_nextLevel) as Class;
-				FlxG.state = (new classReference() as FlxState); //Load the next level by determining the class name from the string
+				
+				FlxG.fade.start(0xFF000000, 1, switchLevels);
+				_player._canMove = false;
 			}
+		}
+		
+		private function switchLevels():void
+		{
+			FlxG.state = new _nextLevel; //Load the next level
 		}
 	}
 	

@@ -19,8 +19,8 @@ package
 		private var
 		_timeSinceLast:Number,
 		_nextTime:Number,
-		_maxTime:Number = 0.1,
-		_timeVariation:Number = 0.05,
+		_maxTime:Number = 0.05,
+		_timeVariation:Number = 0.02,
 		_currentLetterIndex:int = 0;
 		
 		public function TextSign():void

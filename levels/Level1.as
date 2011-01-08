@@ -15,7 +15,7 @@ package levels
 			_spawnPosition = new FlxPoint(8, 26.5 * 8);
 			_goalText = "At first, nothing was out of the ordinary. Days went on as per usual, my eyes, ears, nose, and fingers sensed nothing strange. We were just our usual selves.";
 			_csvToLoad = new Assets.LvlOne;
-			_nextLevel = "levels.Level2";
+			_nextLevel = Level2;
 		}
 	}
 	

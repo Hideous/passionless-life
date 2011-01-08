@@ -16,6 +16,7 @@ package
 		[Embed(source = 'assets/testlevel.txt', mimeType = "application/octet-stream")] public static var LvlTest:Class;
 		
 		[Embed(source = 'assets/Level 1.txt', mimeType = "application/octet-stream")] public static var LvlOne:Class;
+		[Embed(source = 'assets/Level 2.txt', mimeType = "application/octet-stream")] public static var LvlTwo:Class;
 	}
 	
 }
