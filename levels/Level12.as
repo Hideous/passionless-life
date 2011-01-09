@@ -16,6 +16,7 @@ package levels
 			_goalText = "";
 			_csvToLoad = new Assets.LvlTwelve;
 			_nextLevel = Level1;
+			_backgroundColor = 0xFFff5c21;
 		}
 		
 		override public function createObjects():void 

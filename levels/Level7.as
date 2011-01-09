@@ -16,6 +16,7 @@ package levels
 			_goalText = "";
 			_csvToLoad = new Assets.LvlSeven;
 			_nextLevel = Level8;
+			_backgroundColor = 0xFF7aff21;
 		}
 	}
 	

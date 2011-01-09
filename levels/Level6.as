@@ -16,6 +16,7 @@ package levels
 			_goalText = "I started seeing familiar faces and shapes everywhere. Faces of people - people who were better than me. At everything.";
 			_csvToLoad = new Assets.LvlSix;
 			_nextLevel = Level7;
+			_backgroundColor = 0xFF3fff21;
 		}
 		
 		override public function createObjects():void 

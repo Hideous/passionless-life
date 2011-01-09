@@ -16,6 +16,7 @@ package levels
 			_goalText = "Some kind of cave, you are a monkey.";
 			_csvToLoad = new Assets.LvlFour;
 			_nextLevel = Level5;
+			_backgroundColor = 0xFF21ff7a;
 		}
 	}
 	

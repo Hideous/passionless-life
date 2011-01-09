@@ -16,6 +16,7 @@ package levels
 			_goalText = "We definitely had our ups. The thrill of someone new, the joy of just being. PLACEHOLDER TEXT LOL";
 			_csvToLoad = new Assets.LvlTwo;
 			_nextLevel = Level3;
+			_backgroundColor = 0xFF21fff0;
 		}
 	}
 	

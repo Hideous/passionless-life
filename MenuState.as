@@ -10,7 +10,7 @@ package
 	{
 		
 		public var
-		_backgroundColor:uint = 0xFF00c3ff,
+		_backgroundColor:uint = 0xFF2197ff,
 		_textLeftRight:FlxText;
 		 
 		override public function create():void 
