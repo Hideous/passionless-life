@@ -12,11 +12,12 @@ package
 		private var
 		_cutscene:FlxSprite,
 		_passedTime:Number,
-		_frame:int = 0;
+		_frame:int = 0,
+		_fadeSprite:FlxSprite;
 		
 		public function EndingCutscene():void
 		{
-			Assets.music.stop();
+			//Assets.music.stop();
 			var bgSprite:FlxSprite = new FlxSprite();
 			bgSprite.createGraphic(FlxG.width, FlxG.height, 0xFFff2121);
 			add(bgSprite);
@@ -41,6 +42,10 @@ package
 			
 			add(_cutscene);
 			
+			_fadeSprite = new FlxSprite();
+			_fadeSprite.createGraphic(FlxG.width, FlxG.height, 0xFF000000);
+			add(_fadeSprite);
+			
 		}
 		
 		override public function update():void 
@@ -49,7 +54,10 @@ package
 			
 			_passedTime += FlxG.elapsed;
 			
-			if (_passedTime >= 3)
+			Assets.music.volume -= FlxG.elapsed * 0.5;
+			_fadeSprite.alpha -= FlxG.elapsed * 0.5;
+			
+			if (_passedTime >= 6)
 			{
 				_passedTime = 0;
 				if (_frame == 0)
