@@ -85,7 +85,7 @@ package levels
 		{
 			super.update();
 			
-			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level6();
+			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level9();
 			
 			_fadeSprite.alpha -= FlxG.elapsed;
 			
@@ -94,7 +94,7 @@ package levels
 			
 			for each (var e:Enemy in _enemies.members)
 			{
-				if (e.overlaps(_player) && !e.dead)
+				if (e.overlaps(_player) && !e.dead && _player._canMove)
 				{
 					if (_player.velocity.y > 0)
 					{

@@ -15,7 +15,7 @@ package levels
 			_spawnPosition = new FlxPoint(8, 28 * 8);
 			_goalText = "";
 			_csvToLoad = new Assets.LvlSeven;
-			_nextLevel = Level1;
+			_nextLevel = Level8;
 		}
 	}
 	
