@@ -1,5 +1,6 @@
 package 
 {
+	import flash.net.SharedObject;
 	import org.flixel.*;
 	
 	/**
@@ -22,6 +23,15 @@ package
 			Assets.windSound.loadEmbedded(Assets.SndWind, true);
 			Assets.windSound.volume = 0.5;
 			Assets.windSound.play();
+			
+			var so:FlxSave = new FlxSave();
+			so.bind("passionless");
+			
+			if (so.data.complete == 1 && !FlxG.debug)
+			{
+				//Switch to ending cutscene state here
+				FlxG.state = new EndingFrame();
+			}
 			
 			Assets.music = new FlxSound();
 			Assets.music.loadEmbedded(Assets.SndMusic, true);

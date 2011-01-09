@@ -85,7 +85,7 @@ package levels
 		{
 			super.update();
 			
-			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level11();
+			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new EndingCutscene();
 			
 			_fadeSprite.alpha -= FlxG.elapsed;
 			

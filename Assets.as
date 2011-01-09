@@ -14,6 +14,7 @@ package
 		[Embed(source = 'assets/player.png')] public static var ImgPlayer:Class;
 		[Embed(source = 'assets/menu.png')] public static var ImgMenu:Class;
 		[Embed(source = 'assets/enemy.png')] public static var ImgEnemy:Class;
+		[Embed(source = 'assets/finalscene.png')] public static var ImgCutscene:Class;
 		
 		[Embed(source = 'assets/testlevel.txt', mimeType = "application/octet-stream")] public static var LvlTest:Class;
 		
