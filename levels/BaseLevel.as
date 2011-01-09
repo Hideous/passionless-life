@@ -85,7 +85,7 @@ package levels
 		{
 			super.update();
 			
-			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level9();
+			if (FlxG.debug && FlxG.keys.justPressed("O")) FlxG.state = new Level10();
 			
 			_fadeSprite.alpha -= FlxG.elapsed;
 			
@@ -111,9 +111,14 @@ package levels
 				}
 			}
 			
+			if (_player.y > FlxG.height)
+			{
+				_player.kill();
+				FlxG.flash.start(0xFFFFFFFF, 0.3, resetLevel);
+			}
+			
 			if (_player.x > FlxG.width)
 			{
-				
 				FlxG.fade.start(0xFF000000, 1, switchLevels);
 				_player._canMove = false;
 			}

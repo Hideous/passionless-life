@@ -15,7 +15,7 @@ package levels
 			_spawnPosition = new FlxPoint(8, 34 * 8);
 			_goalText = "";
 			_csvToLoad = new Assets.LvlNine;
-			_nextLevel = Level1;
+			_nextLevel = Level10;
 		}
 		
 		override public function createObjects():void 
