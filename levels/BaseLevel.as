@@ -98,6 +98,7 @@ package levels
 				{
 					if (_player.velocity.y > 0)
 					{
+						FlxG.play(Assets.SfxStomp);
 						e.kill()
 						_player.velocity.y = -30;
 					}

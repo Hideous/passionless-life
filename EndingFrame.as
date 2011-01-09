@@ -26,6 +26,21 @@ package
 			
 			add(_cutscene);
 		}
+		
+		override public function update():void 
+		{
+			 super.update();
+			 
+			if (FlxG.keys.SHIFT && FlxG.keys.R)
+			{
+				var so:FlxSave = new FlxSave();
+				so.bind("passionless");
+				so.data.complete = 0;
+				so.forceSave();
+				
+				FlxG.state = new MenuState();
+			}
+		}
 	}
 	
 }

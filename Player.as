@@ -40,6 +40,12 @@ package
 			drag.x = 90; //Stop quickly, but not TOO quickly. Slide is artsy.
 		}
 		
+		override public function kill():void 
+		{
+			super.kill();
+			FlxG.play(Assets.SfxDeath);
+		}
+		
 		override public function update():void 
 		{
 			if (!_canMove) return;
@@ -75,6 +81,7 @@ package
 			{
 				velocity.y = -_jumpPower;
 				_jumping = true;
+				FlxG.play(Assets.SfxJump);
 			}
 			
 			if (!FlxG.keys.UP && !onFloor) _jumpDuration = 50;

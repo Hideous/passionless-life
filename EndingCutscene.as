@@ -65,6 +65,7 @@ package
 				else if (_frame == 2 )
 				{
 					FlxG.flash.start();
+					FlxG.play(Assets.SfxPistol);
 					_cutscene.play("4");
 					_frame++;
 				}

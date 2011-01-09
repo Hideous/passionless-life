@@ -16,6 +16,11 @@ package
 		[Embed(source = 'assets/enemy.png')] public static var ImgEnemy:Class;
 		[Embed(source = 'assets/finalscene.png')] public static var ImgCutscene:Class;
 		
+		[Embed(source = 'assets/stomp.mp3')] public static var SfxStomp:Class;
+		[Embed(source = 'assets/hurt.mp3')] public static var SfxDeath:Class;
+		[Embed(source = 'assets/jump.mp3')] public static var SfxJump:Class;
+		[Embed(source = 'assets/shoot.mp3')] public static var SfxPistol:Class;
+		
 		[Embed(source = 'assets/testlevel.txt', mimeType = "application/octet-stream")] public static var LvlTest:Class;
 		
 		[Embed(source = 'assets/Level 1.txt', mimeType = "application/octet-stream")] public static var LvlOne:Class;
