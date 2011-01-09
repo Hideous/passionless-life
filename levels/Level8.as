@@ -13,7 +13,7 @@ package levels
 		public function Level8():void
 		{
 			_spawnPosition = new FlxPoint(8, 36 * 8);
-			_goalText = "";
+			_goalText = "And sometimes, when I was at my best, her abusive behavior would drag me back down again. It was an evil, malicious and unbreakable spiral.";
 			_csvToLoad = new Assets.LvlEight;
 			_nextLevel = Level9;
 			_backgroundColor = 0xFFb5ff21;

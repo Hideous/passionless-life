@@ -13,7 +13,7 @@ package levels
 		public function Level10():void
 		{
 			_spawnPosition = new FlxPoint(8, 34 * 8);
-			_goalText = "";
+			_goalText = "We got back together. But we were broken, lost. We tried our best to regain what we had before, what we so longed for.";
 			_csvToLoad = new Assets.LvlTen;
 			_nextLevel = Level11;
 			_backgroundColor = 0xFFffd321;
