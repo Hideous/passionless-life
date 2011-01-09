@@ -1,6 +1,7 @@
 package 
 {
 	import flash.utils.ByteArray;
+	import org.flixel.FlxSound;
 	
 	/**
 	 * ...
@@ -26,8 +27,15 @@ package
 		[Embed(source = 'assets/Level 8.txt', mimeType = "application/octet-stream")] public static var LvlEight:Class;
 		[Embed(source = 'assets/Level 9.txt', mimeType = "application/octet-stream")] public static var LvlNine:Class;
 		[Embed(source = 'assets/Level 10.txt', mimeType = "application/octet-stream")] public static var LvlTen:Class;
+		[Embed(source = 'assets/Level 11.txt', mimeType = "application/octet-stream")] public static var LvlEleven:Class;
+		[Embed(source = 'assets/Level 12.txt', mimeType = "application/octet-stream")] public static var LvlTwelve:Class;
 		
 		[Embed(source = 'assets/Wind.mp3')] public static var SndWind:Class;
+		[Embed(source = 'assets/Downshift_Version_3.mp3')] public static var SndMusic:Class;
+		
+		public static var windSound:FlxSound; //Putting these here cause I CBA to make another global class
+		public static var music:FlxSound;
+		
 	}
 	
 }

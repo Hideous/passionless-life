@@ -16,6 +16,7 @@ package levels
 			_goalText = "At first, nothing was out of the ordinary. Days went on as per usual, my eyes, ears, nose, and fingers sensed nothing strange. We were just our usual selves.";
 			_csvToLoad = new Assets.LvlOne;
 			_nextLevel = Level2;
+			if (!Assets.music.playing) Assets.music.play();
 		}
 	}
 	

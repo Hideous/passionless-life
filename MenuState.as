@@ -17,7 +17,14 @@ package
 		{
 			super.create();
 			
-			FlxG.playMusic(Assets.SndWind);
+			//FlxG.playMusic(Assets.SndWind, 0.7);
+			Assets.windSound = new FlxSound();
+			Assets.windSound.loadEmbedded(Assets.SndWind, true);
+			Assets.windSound.volume = 0.7;
+			Assets.windSound.play();
+			
+			Assets.music = new FlxSound();
+			Assets.music.loadEmbedded(Assets.SndMusic, true);
 			
 			var bgSprite:FlxSprite = new FlxSprite();
 			bgSprite.createGraphic(FlxG.width, FlxG.height, _backgroundColor);
